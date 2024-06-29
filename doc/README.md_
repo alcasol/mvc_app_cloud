@@ -1,0 +1,14 @@
+|---------------------------------------------------------------------
+| Configuración del Proyecto
+|---------------------------------------------------------------------
+| contiene archivos de configuración del proyecto
+|   database.php: Contiene la configuración y la lógica para la 
+|       conexión
+|       a la base de datos MySQL.
+|   config.php: Configuración general del servidor, como configuraciones 
+|       de entorno y otras constantes globales.
+|---------------------------------------------------------------------
+|---------------------------------------------------------------------
+|-- /config
+|   |-- database.php        # Configuración de la base de datos MySQL
+|   |-- config.php          # Configuración general del servidor

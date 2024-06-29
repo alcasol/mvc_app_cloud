@@ -1,0 +1,13 @@
+|---------------------------------------------------------------------
+| Controladores
+|---------------------------------------------------------------------
+| Actúa como intermediario entre el modelo y la vista. Procesa las 
+| entradas. Llama al modelo para obtener los datos necesarios y llama 
+| a la vista para mostrar los datos.
+|---------------------------------------------------------------------
+|---------------------------------------------------------------------
+|-- /app
+|   |-- /controllers
+|   |   |-- UserController.php
+|   |   |-- AuthController.php
+|   |   |-- HomeController.php

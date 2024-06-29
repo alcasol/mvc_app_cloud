@@ -1,0 +1,36 @@
+|---------------------------------------------------------------------
+| Como crear una clase Test en la carpeta /test
+|---------------------------------------------------------------------
+|
+
+<?php
+
+use PHPUnit\Framework\TestCase;
+
+final class TestClass extends TestCase
+{
+    public function testFunction() {
+        require_once __DIR__ . '/../';
+
+        try {
+
+            // Tests will go here
+
+        } catch (Exception $e) {
+            $this->fail('Failed to ...: ' . $e->getMessage());
+        }
+    }
+    
+}
+
+|---------------------------------------------------------------------
+| Tipos de pruebas
+|---------------------------------------------------------------------
+| assertSame -- $this->assertSame('val', resVal);
+| assertEmpty -- $this->assertEmpty(checkIsEmpty?);
+| assertTrue -- $this->assertTrue(checkIsTrue?);
+| assertContains -- $this->assertContains('val', resValue)
+| assertCount -- $this->assertCount(val, resValue);
+| assertIsString -- $this->assertIsString(checkIsString?);
+| assertStringContainsStringIgnoringCase -- $this->assertStringContainsStringIgnoringCase('val', resValue);
+  

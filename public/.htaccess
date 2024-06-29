@@ -1,0 +1,34 @@
+# -----------------------------------------------------------------------------
+# /public/.htaccess
+# -----------------------------------------------------------------------------
+# Esta directiva evita que se muestren listados de directorios en el directorio 
+# public/.
+Options -Indexes
+
+# Habilita el motor de reescritura de URL específicamente para el directorio 
+# public/
+RewriteEngine On
+RewriteBase /mvc_app_raiola/public
+
+# Redirigir a HTTPS si no está activo
+# ----------------------------------------------------------------
+# R A I O L A N E T W O R K S
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# ----------------------------------------------------------------
+
+# Esta condición asegura que la reescritura se aplique solo si la solicitud no
+# coincide con un archivo existente (!-f).
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Esta condición asegura que la reescritura se aplique solo si la solicitud no 
+# coincide con un directorio existente (!-d).
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ^(.+)$ captura cualquier URL solicitada que no sea un archivo existente ni un
+# directorio. index.php?url=$1 redirige la solicitud a index.php dentro del 
+# directorio public/, pasando la parte capturada de la URL como el parámetro url.
+# [QSA,L] significa:
+# QSA: "Query String Append". Conserva las cadenas de consulta existentes mientras agrega nuevas.
+# L: "Last". Esta es la última regla que se aplicará si coincide.
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

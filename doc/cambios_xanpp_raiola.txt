@@ -1,0 +1,103 @@
+mvc_app_raiola/.htaccess
+/public/.htaccess
+.htaccess // Esta en htdocs
+/config/database.php
+/config/config.php
+/core/Router.php
+.env
+chmod 400 .env // permisos de lectura solo para el propietario
+env.js --> "/mvc_app_raiola/public/env" // así cargo las variables de entorno en el cliente
+sudo chmod -R 755 logs
+sudo chown -R daemon:daemon logs  // cambio de propietario
+sudo chmod -R 755 uploads
+sudo chown -R daemon:daemon uploads  
+
+
+// -------------------------------------
+// httpd.conf
+// -------------------------------------
+<IfModule unixd_module>
+#
+# If you wish httpd to run as a different user or group, you must run
+# httpd as root initially and it will switch.
+#
+# User/Group: The name (or #number) of the user/group to run httpd as.
+# It is usually good practice to create a dedicated user and group for
+# running httpd, as with most system services.
+#
+User daemon
+Group daemon
+</IfModule>
+#
+# ServerName gives the name and port that the server uses to identify itself.
+# This can often be determined automatically, but we recommend you specify
+# it explicitly to prevent problems during startup.
+#
+# If your host doesn't have a registered DNS name, enter its IP address here.
+#
+#ServerName www.example.com:@@Port@@
+# XAMPP
+ServerName localhost
+
+// -------------------------------------
+// Comandos
+// -------------------------------------
+brew install --cask xampp
+composer require vlucas/phpdotenv
+composer restart
+composer install 
+composer init
+ls -l logs 
+ps aux | grep httpd
+chmod +x ./vendor/bin/phpunit 
+composer test test/DbTest.php
+sudo a2enmod rewrite
+composer dump-autoload 
+git commit -m "He añadido incio de sesion de usuario"
+test --configuration phpunit.xml 
+./vendor/bin/phpunit --configuration phpunit
+composer require --dev phpunit/phpunit
+phpunit --version  
+nano ~/.zshrc 
+/Applications/XAMPP/xamppfiles/etc/httpd.conf lsof -i :3306
+sudo lsof -i :3306 
+ps aux | grep mysql  
+mysql -u tu_usuario -p
+
+// -------------------------------------
+// Medidas de seguridad
+// -------------------------------------
+1. protección CSRF (En formularios)
+2. Validación de Entrada de Datos
+Es crucial validar todos los datos recibidos del usuario, ya sea a través de formularios, 
+URLs, cookies o cualquier otro medio. La validación debe asegurar que los datos cumplen 
+con los formatos esperados y no contienen caracteres maliciosos que puedan ser 
+utilizados para ataques XSS (Cross-Site Scripting) o SQL injection.
+3. Hashing y Salting de Contraseñas
+Salting no lo he hecho. Proceso:
+ALTER TABLE user_credentials ADD COLUMN salt VARCHAR(255) NOT NULL;
+// Generar salt aleatorio
+$salt = bin2hex(random_bytes(16));
+// Concatenar salt con la contraseña
+$saltedPassword = $salt . $password;
+
+// Almacenar $hashedPassword y $salt en la base de datos
+4. Configuración Segura del Servidor y PHP
+Asegúrate de tener una configuración adecuada del servidor web y PHP:
+
+Configuración del Servidor: Utiliza HTTPS en lugar de HTTP para cifrar la comunicación entre el cliente y el servidor.
+Configuración de PHP: Ajusta las configuraciones de PHP (php.ini) para limitar el tamaño máximo de carga, deshabilitar funciones potencialmente peligrosas (como eval()), y registrar errores de manera adecuada sin revelar información sensible.
+5. Control de Acceso Basado en Roles (RBAC)
+Implementa un sistema de Control de Acceso Basado en Roles (RBAC) para limitar qué recursos y funcionalidades pueden acceder los usuarios en función de su rol y privilegios. Esto ayuda a mitigar riesgos de seguridad al limitar el acceso a funciones críticas y datos sensibles.
+
+6. Auditorías y Registro de Actividades (Logging)
+Mantén registros detallados de todas las acciones realizadas por los usuarios y del funcionamiento de la aplicación. Esto te permite monitorizar y detectar posibles actividades maliciosas o anomalías en el sistema.
+
+7. Actualizaciones y Parches de Seguridad
+Mantén actualizados todos los componentes de tu aplicación (frameworks, bibliotecas, plugins, etc.) para mitigar vulnerabilidades conocidas y aplicar parches de seguridad tan pronto como estén disponibles.
+
+7. Educación y Concienciación en Seguridad
+Fomenta una cultura de seguridad entre los desarrolladores y usuarios finales. Educa a tu equipo sobre las mejores prácticas de seguridad y sensibiliza a los usuarios sobre los riesgos comunes y cómo protegerse (por ejemplo, eligiendo contraseñas seguras).
+
+8. Pruebas de Seguridad (Penetration Testing)
+Realiza pruebas regulares de penetración (penetration testing) para identificar y corregir vulnerabilidades antes de que sean explotadas por atacantes reales.

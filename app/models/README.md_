@@ -1,0 +1,11 @@
+|---------------------------------------------------------------------
+| Modelos
+|---------------------------------------------------------------------
+| El Modelo es responsable de:
+| - la lógica de negocio y la interacción con la base de datos. 
+| - Encapsula los datos de la aplicación.
+| - Maneja las operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
+|---------------------------------------------------------------------
+|---------------------------------------------------------------------
+|-- /models
+|   |-- User.php        # Maneja las operaciones relacionadas con los usuarios

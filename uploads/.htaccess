@@ -1,0 +1,10 @@
+# -----------------------------------------------------------------------------
+# uploads/.htaccess
+# -----------------------------------------------------------------------------
+# Deshabilitar la ejecución de scripts en el directorio de subidas:
+# Para evitar la ejecución de scripts PHP u otros tipos de archivos en el 
+# directorio de subidas
+<FilesMatch "\.(php|php3|php4|php5|phtml)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
