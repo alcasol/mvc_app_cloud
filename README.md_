@@ -1,0 +1,56 @@
+|---------------------------------------------------------------------
+| Estructura del Proyecto
+|---------------------------------------------------------------------
+|---------------------------------------------------------------------
+|---------------------------------------------------------------------
+/mvc_app
+|-- /app
+|   |-- /controllers
+|   |   |-- UserController.php
+|   |   |-- AuthController.php
+|   |   |-- HomeController.php
+|   |-- /models
+|       |-- User.php
+|   |-- /views
+|   |   |-- /errors
+|   |   |   |-- error.php 
+|   |   |-- /file
+|   |   |   |-- upload.php
+|   |   |-- /home
+|   |   |   |-- index.php
+|   |   |-- /user
+|   |   |   |-- login.php
+|   |   |   |-- profile.php
+|   |   |   |-- register.php
+|-- /config
+|   |-- config.php
+|   |-- routes.php
+|   |-- database.php
+|-- /core
+|   |-- Router.php
+|   |-- Controller.php
+|   |-- Model.php
+|   |-- View.php
+|   |-- Database.php
+|-- /public
+|   |-- .htaccess
+|   |-- index.php
+|   |-- /css
+|   |   |-- styles.css
+|   |-- /img
+|   |   |-- logo.png
+|   |-- /js
+|   |   |-- realizarSolicitudHTTP.js
+|-- /uploads
+|-- /vendor
+|-- .htaccess
+|-- .env
+|-- composer.json
+|-- composer.lock
+|-- phpunit.xml
+|-- /test
+|   |-- DbConnectionTest.php
+|   |-- UserTest.php
+|   |-- UserControllerTest.php
+|   |-- HomeControllerTest.php
+|   |-- AuthControllerTest.php
