@@ -8,7 +8,7 @@ Options -Indexes
 # Habilita el motor de reescritura de URL específicamente para el directorio 
 # public/
 RewriteEngine On
-RewriteBase /mvc_app_raiola/public
+RewriteBase /mvc_app_cloud/public
 
 # Redirigir a HTTPS si no está activo
 # ----------------------------------------------------------------

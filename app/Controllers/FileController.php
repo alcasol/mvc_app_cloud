@@ -30,6 +30,7 @@ class FileController extends Controller {
                     $errorMessage = "File already exists.";
                     Log::error($errorMessage);
                     JSONServerResponse::error($errorMessage, 400);
+                    return;
                 }
 
                 // Verificar el tamaño del archivo
@@ -37,6 +38,7 @@ class FileController extends Controller {
                     $errorMessage = "File is too large.";
                     Log::error($errorMessage);
                     JSONServerResponse::error($errorMessage, 400);
+                    return;
                 }
 
                 // Permitir ciertos formatos de archivo (opcional)
@@ -45,6 +47,15 @@ class FileController extends Controller {
                     $errorMessage = "Only JPG, JPEG, PNG & GIF files are allowed.";
                     Log::error($errorMessage);
                     JSONServerResponse::error($errorMessage, 400);
+                    return;
+                }
+
+                // Verificar si el directorio de destino es escribible
+                if (!is_writable($targetDir)) {
+                    $errorMessage = "Upload directory is not writable.";
+                    Log::error($errorMessage);
+                    JSONServerResponse::error($errorMessage, 500);
+                    return;
                 }
 
                 // Si no hay errores hasta este punto, intentar mover el archivo

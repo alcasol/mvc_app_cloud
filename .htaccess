@@ -18,11 +18,11 @@ RewriteRule ^(.*)$ public/$1 [L]
 # XAMPP CASA
 # -----------------------------------------------------------------------------
 # Redirigir http://localhost a http://localhost/mvc_app_raiola/
-RewriteCond %{HTTP_HOST} ^localhost$ [NC]
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^(.*)$ /mvc_app_raiola/$1 [L,R=301]
+# RewriteCond %{HTTP_HOST} ^localhost$ [NC]
+# RewriteCond %{REQUEST_URI} ^/$
+# RewriteRule ^(.*)$ /mvc_app_raiola/$1 [L,R=301]
 
 # Redirigir http://192.168.1.130 a http://192.168.1.130/mvc_app_raiola/
-RewriteCond %{HTTP_HOST} ^192\.168\.1\.130$
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^(.*)$ /mvc_app_raiola/$1 [L,R=301]
+# RewriteCond %{HTTP_HOST} ^192\.168\.1\.130$
+# RewriteCond %{REQUEST_URI} ^/$
+# RewriteRule ^(.*)$ /mvc_app_raiola/$1 [L,R=301]

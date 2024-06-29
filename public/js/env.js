@@ -8,7 +8,7 @@ export async function getEnvVariables() {
         let envData = JSON.parse(localStorage.getItem('envData'));
 
         if (!envData) {
-            const response = await fetch("/mvc_app_raiola/public/env");
+            const response = await fetch("/mvc_app_cloud/public/env");
             envData = await response.json();
             
             // Almacena las variables de entorno en localStorage

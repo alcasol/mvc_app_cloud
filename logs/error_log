@@ -149,3 +149,7 @@
 2024-06-28 20:13:07 [INFO] - User deleted successfully: aa | IP: 192.168.1.130
 2024-06-28 20:13:17 [INFO] - User created successfully: aa | IP: 192.168.1.130
 2024-06-28 20:50:03 [INFO] - User created successfully: nn | IP: 192.168.1.130
+2024-06-29 10:39:26 [INFO] - User created successfully: pp | IP: 192.168.1.130
+2024-06-29 10:44:37 [ERROR] - There was an error uploading your file. | IP: 192.168.1.130 Details: {"type":2,"message":"move_uploaded_file(): Unable to move '\/Applications\/XAMPP\/xamppfiles\/temp\/phpSEICUy' to '\/Applications\/XAMPP\/xamppfiles\/htdocs\/mvc_app_cloud\/config\/..\/uploads\/1.png'","file":"\/Applications\/XAMPP\/xamppfiles\/htdocs\/mvc_app_cloud\/app\/controllers\/FileController.php","line":52}
+2024-06-29 10:55:40 [ERROR] - There was an error uploading your file. | IP: 192.168.1.130 Details: {"type":2,"message":"move_uploaded_file(): Unable to move '\/Applications\/XAMPP\/xamppfiles\/temp\/php5TQoUj' to '\/Applications\/XAMPP\/xamppfiles\/htdocs\/mvc_app_cloud\/config\/..\/uploads\/1.png'","file":"\/Applications\/XAMPP\/xamppfiles\/htdocs\/mvc_app_cloud\/app\/controllers\/FileController.php","line":52}
+2024-06-29 10:59:41 [ERROR] - Upload directory is not writable. | IP: 192.168.1.130

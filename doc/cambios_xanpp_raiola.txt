@@ -1,3 +1,17 @@
+// -------------------------------------
+// Cambios para redirigir directorio
+// -------------------------------------
+.htaccess // De htdocs para inicio de página
+.env --> variables de entorno
+env.js --> "/mvc_app_raiola/public/env" 
+/public/.htaccess
+sudo chmod -R 750 logs
+sudo chown -R daemon:daemon logs
+sudo chmod -R 755 uploads
+sudo chown -R daemon:daemon uploads  
+
+
+
 mvc_app_raiola/.htaccess
 /public/.htaccess
 .htaccess // Esta en htdocs
@@ -7,7 +21,7 @@ mvc_app_raiola/.htaccess
 .env
 chmod 400 .env // permisos de lectura solo para el propietario
 env.js --> "/mvc_app_raiola/public/env" // así cargo las variables de entorno en el cliente
-sudo chmod -R 755 logs
+sudo chmod -R 750 logs
 sudo chown -R daemon:daemon logs  // cambio de propietario
 sudo chmod -R 755 uploads
 sudo chown -R daemon:daemon uploads  
